@@ -21,7 +21,13 @@ function App() {
     <Router>
       {/* flex контейнер для прижатия футера */}
       <Box
-        sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          background:
+            'linear-gradient(to bottom, rgba(255, 255, 255, 0.95), #9c9c9c)',
+        }}
       >
         <Header />
 

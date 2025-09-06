@@ -61,8 +61,13 @@ export function Header() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'linear-gradient(135deg,#555,#999)',
+                background: 'linear-gradient(135deg, #ff6f61, #e65b50)', // градиент красного
                 cursor: 'pointer',
+                boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                transition: 'transform 0.2s ease',
+                '&:hover': {
+                  transform: 'scale(1.1)', // лёгкое увеличение при наведении
+                },
               }}
               onClick={() => handleNavigate('/')}
             >
@@ -130,9 +135,13 @@ export function Header() {
                 px: 3,
                 py: 1,
                 borderRadius: '12px',
-                backgroundColor: '#ff6f61',
+                background: 'linear-gradient(135deg, #ff6f61, #e65b50)', // градиент красного
                 boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
-                '&:hover': { backgroundColor: '#e65b50' },
+                textTransform: 'none',
+                fontWeight: 500,
+                '&:hover': {
+                  background: 'linear-gradient(135deg, #e65b50, #ff5a4a)', // чуть более тёмный градиент при ховере
+                },
               }}
             >
               Lebenslauf
