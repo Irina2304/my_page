@@ -1,4 +1,3 @@
-//
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
@@ -20,7 +19,7 @@ import Slide from '@mui/material/Slide';
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation(); // получаем текущий путь
+  const location = useLocation();
 
   const menuItems = [
     { path: '/', label: 'Startseite' },
@@ -35,6 +34,8 @@ export function Header() {
     navigate(path);
     setMobileOpen(false);
   };
+
+  const currentPath = decodeURIComponent(location.pathname);
 
   return (
     <>
@@ -93,7 +94,7 @@ export function Header() {
             }}
           >
             {menuItems.map(item => {
-              const isActive = location.pathname === item.path;
+              const isActive = currentPath === item.path;
               return (
                 <Button
                   key={item.path}
@@ -157,7 +158,13 @@ export function Header() {
       >
         <Slide direction="left" in={mobileOpen} mountOnEnter unmountOnExit>
           <Box
-            sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+            key={currentPath} // важный момент: Drawer будет перерендериваться при смене пути
+            sx={{
+              height: '100%',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'stretch',
+            }}
           >
             <Box sx={{ display: 'flex', justifyContent: 'flex-end', p: 2 }}>
               <IconButton onClick={() => setMobileOpen(false)}>
@@ -165,18 +172,22 @@ export function Header() {
               </IconButton>
             </Box>
 
-            <List>
+            <List sx={{ flex: 1 }}>
               {menuItems.map(item => {
-                const isActive = location.pathname === item.path;
+                const isActive = currentPath === item.path;
                 return (
                   <ListItem key={item.path} disablePadding>
                     <ListItemButton
                       onClick={() => handleNavigate(item.path)}
                       sx={{
+                        width: '100%',
                         borderLeft: isActive
                           ? '4px solid #ff6f61'
                           : '4px solid transparent',
                         transition: 'border-left 0.3s',
+                        pl: 2,
+                        boxSizing: 'border-box',
+                        '&:hover': { borderLeft: '4px solid #ff6f61' },
                       }}
                     >
                       <ListItemText primary={item.label} />
