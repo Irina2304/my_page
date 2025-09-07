@@ -56,9 +56,18 @@ export default function Contact() {
   return (
     <Box component="section" sx={{ py: 10, px: 2 }}>
       <Box sx={{ maxWidth: 1100, mx: 'auto', textAlign: 'center', mb: 8 }}>
-        <Typography variant="h3" fontWeight={700} mb={2}>
-          Kontakte
-        </Typography>
+        {/* Заголовок с акцентной полоской */}
+        <Box
+          sx={{ display: 'inline-flex', alignItems: 'center', gap: 2, mb: 2 }}
+        >
+          <Box
+            sx={{ width: 6, height: 40, bgcolor: '#ff6f61', borderRadius: 2 }}
+          />
+          <Typography variant="h3" fontWeight={700}>
+            Kontakte
+          </Typography>
+        </Box>
+
         <Typography
           variant="body1"
           color="text.secondary"

@@ -13,20 +13,6 @@ const fadeInRight = keyframes`
   to { opacity: 1; transform: translateX(0); }
 `;
 
-// Стили для декоративных кружков
-const circleStyle = (size, color, top, left, bottom, right) => ({
-  position: 'absolute',
-  width: size,
-  height: size,
-  borderRadius: '50%',
-  background: color,
-  zIndex: 0,
-  top,
-  left,
-  bottom,
-  right,
-});
-
 export default function Home() {
   return (
     <Box
@@ -41,45 +27,9 @@ export default function Home() {
         pt: 10, // отступ сверху, как на Familie
         pb: 10,
         overflow: 'hidden',
+        gap: '50px',
       }}
     >
-      {/* Декоративные кружочки */}
-      <Box sx={circleStyle(120, 'rgba(255,111,97,0.15)', '10%', '8%')} />
-      <Box
-        sx={circleStyle(
-          180,
-          'rgba(230,91,80,0.12)',
-          '20%',
-          undefined,
-          undefined,
-          '15%'
-        )}
-      />
-      <Box
-        sx={circleStyle(90, 'rgba(255,111,97,0.1)', undefined, '20%', '25%')}
-      />
-      <Box
-        sx={circleStyle(
-          140,
-          'rgba(230,91,80,0.1)',
-          undefined,
-          undefined,
-          '10%',
-          '5%'
-        )}
-      />
-      <Box sx={circleStyle(70, 'rgba(255,111,97,0.18)', '65%', '12%')} />
-      <Box
-        sx={circleStyle(
-          200,
-          'rgba(230,91,80,0.08)',
-          undefined,
-          undefined,
-          '-50px',
-          '-50px'
-        )}
-      />
-
       {/* Текст слева */}
       <Box
         sx={{
@@ -91,12 +41,14 @@ export default function Home() {
         {/* Приветствие с акцентной полоской */}
         <Box
           sx={{
-            display: 'flex',
+            display: 'inline-flex',
             alignItems: 'center',
-            justifyContent: 'center',
+            gap: 2,
             mb: 3,
             animation: `${fadeInLeft} 0.8s ease forwards`,
             opacity: 0,
+            pl: 0, // обнуляем внутренний padding слева
+            overflow: 'visible', // чтобы полоска не обрезалась
           }}
         >
           <Box
@@ -105,7 +57,7 @@ export default function Home() {
               height: 40,
               bgcolor: '#ff6f61',
               borderRadius: 2,
-              mr: 2,
+              flexShrink: 0, // чтобы полоска не сжималась
             }}
           />
           <Typography variant="h2" fontWeight={700}>
