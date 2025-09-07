@@ -120,7 +120,8 @@ export default function Familie() {
               >
                 <CardMedia
                   component="img"
-                  src={`${process.env.PUBLIC_URL}/foto/familie_1.jpg`}
+                  loading="lazy"
+                  src={`${process.env.PUBLIC_URL}/foto/familie_1.webp`}
                   alt="Familie Bild 1"
                   sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -143,7 +144,8 @@ export default function Familie() {
               >
                 <CardMedia
                   component="img"
-                  src={`${process.env.PUBLIC_URL}/foto/familie_2.jpg`}
+                  loading="lazy"
+                  src={`${process.env.PUBLIC_URL}/foto/familie_2.webp`}
                   alt="Familie Bild 2"
                   sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -168,7 +170,8 @@ export default function Familie() {
             >
               <CardMedia
                 component="img"
-                src={`${process.env.PUBLIC_URL}/foto/familie_3.jpg`}
+                loading="lazy"
+                src={`${process.env.PUBLIC_URL}/foto/familie_3.webp`}
                 alt="Familie Bild 3"
                 sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
