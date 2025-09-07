@@ -53,17 +53,55 @@ export default function Familie() {
               flexDirection: 'column',
               alignItems: 'center',
               gap: 2,
+              position: 'relative',
             }}
           >
             {/* Верхний ряд: две карточки */}
+            {/* <Box
+              sx={{
+                position: 'absolute',
+                border: '4px solid #ff6f61',
+                width: 360,
+                height: 400,
+                transform: 'rotate(-2deg)',
+                top: '-25px',
+                left: '-20px',
+                borderRadius: '15px',
+              }}
+            /> */}
+            {/* <Box
+              sx={{
+                position: 'absolute',
+                border: '4px solid #ff6f61',
+                width: 360,
+                height: 400,
+                transform: 'rotate(-2deg)',
+                top: '-25px',
+                left: '-20px',
+                borderRadius: '15px',
+              }}
+            /> */}
             <Box
               sx={{
                 display: 'flex',
                 gap: 2,
                 justifyContent: 'center',
                 flexWrap: { xs: 'wrap', md: 'nowrap' },
+                position: 'relative',
               }}
             >
+              {/* <Box
+                sx={{
+                  position: 'absolute',
+                  border: '4px solid #ff6f61',
+                  width: 360,
+                  height: 400,
+                  transform: 'rotate(-2deg)',
+                  top: '-25px',
+                  left: '-20px',
+                  borderRadius: '15px',
+                }}
+              /> */}
               <Card
                 sx={{
                   borderRadius: 3,
@@ -82,7 +120,7 @@ export default function Familie() {
               >
                 <CardMedia
                   component="img"
-                  src={`${process.env.PUBLIC_URL}/foto/familie.jpg`}
+                  src={`${process.env.PUBLIC_URL}/foto/familie_1.jpg`}
                   alt="Familie Bild 1"
                   sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
@@ -105,13 +143,12 @@ export default function Familie() {
               >
                 <CardMedia
                   component="img"
-                  src={`${process.env.PUBLIC_URL}/foto/familie2.jpg`}
+                  src={`${process.env.PUBLIC_URL}/foto/familie_2.jpg`}
                   alt="Familie Bild 2"
                   sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </Card>
             </Box>
-
             {/* Нижняя карточка */}
             <Card
               sx={{
@@ -131,7 +168,7 @@ export default function Familie() {
             >
               <CardMedia
                 component="img"
-                src={`${process.env.PUBLIC_URL}/foto/familie3.jpg`}
+                src={`${process.env.PUBLIC_URL}/foto/familie_3.jpg`}
                 alt="Familie Bild 3"
                 sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
