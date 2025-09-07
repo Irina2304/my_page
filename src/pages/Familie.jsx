@@ -57,30 +57,6 @@ export default function Familie() {
             }}
           >
             {/* Верхний ряд: две карточки */}
-            {/* <Box
-              sx={{
-                position: 'absolute',
-                border: '4px solid #ff6f61',
-                width: 360,
-                height: 400,
-                transform: 'rotate(-2deg)',
-                top: '-25px',
-                left: '-20px',
-                borderRadius: '15px',
-              }}
-            /> */}
-            {/* <Box
-              sx={{
-                position: 'absolute',
-                border: '4px solid #ff6f61',
-                width: 360,
-                height: 400,
-                transform: 'rotate(-2deg)',
-                top: '-25px',
-                left: '-20px',
-                borderRadius: '15px',
-              }}
-            /> */}
             <Box
               sx={{
                 display: 'flex',
@@ -90,18 +66,6 @@ export default function Familie() {
                 position: 'relative',
               }}
             >
-              {/* <Box
-                sx={{
-                  position: 'absolute',
-                  border: '4px solid #ff6f61',
-                  width: 360,
-                  height: 400,
-                  transform: 'rotate(-2deg)',
-                  top: '-25px',
-                  left: '-20px',
-                  borderRadius: '15px',
-                }}
-              /> */}
               <Card
                 sx={{
                   borderRadius: 3,
