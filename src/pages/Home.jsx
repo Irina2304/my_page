@@ -14,6 +14,14 @@ const fadeInRight = keyframes`
 `;
 
 export default function Home() {
+  const paragraphs = [
+    'Ich bin neugierig von Natur und voller Motivation, Neues zu lernen. In den letzten Jahren habe ich meine Kenntnisse in verschiedenen Bereichen erweitert und mich in Deutschland integriert.',
+    'Meine Interessen reichen von Technik und IT bis hin zu Kunst und Musik. Ich liebe es, mit Menschen zu kommunizieren, Projekte umzusetzen und kreative Ideen in die Realität zu bringen.',
+    'Ich freue mich darauf, mich Ihnen hier vorzustellen und ein wenig über meinen Werdegang, meine Familie und meine Inspirationen zu erzählen.',
+  ];
+
+  const indent = [0, 60, 120]; // смещение каждого абзаца
+
   return (
     <Box
       sx={{
@@ -24,7 +32,7 @@ export default function Home() {
         justifyContent: 'space-around',
         minHeight: '100vh',
         px: { xs: 2, md: 8 },
-        pt: 10, // отступ сверху, как на Familie
+        pt: 10,
         pb: 10,
         overflow: 'hidden',
         gap: '50px',
@@ -33,8 +41,8 @@ export default function Home() {
       {/* Текст слева */}
       <Box
         sx={{
-          textAlign: 'center',
-          maxWidth: 500,
+          textAlign: 'left',
+          maxWidth: { xs: '90%', md: 700 }, // увеличено на десктопе
           zIndex: 2,
         }}
       >
@@ -47,8 +55,8 @@ export default function Home() {
             mb: 3,
             animation: `${fadeInLeft} 0.8s ease forwards`,
             opacity: 0,
-            pl: 0, // обнуляем внутренний padding слева
-            overflow: 'visible', // чтобы полоска не обрезалась
+            pl: 0,
+            overflow: 'visible',
           }}
         >
           <Box
@@ -57,7 +65,7 @@ export default function Home() {
               height: 40,
               bgcolor: '#ff6f61',
               borderRadius: 2,
-              flexShrink: 0, // чтобы полоска не сжималась
+              flexShrink: 0,
             }}
           />
           <Typography variant="h2" fontWeight={700}>
@@ -65,70 +73,50 @@ export default function Home() {
           </Typography>
         </Box>
 
-        {/* Елочка: каждый абзац смещен вправо */}
+        {/* Willkommen с креативным блоком */}
         <Typography
-          variant="h5"
+          variant="h4"
           sx={{
-            mb: 3,
-            fontWeight: 500,
-            fontSize: { xs: '1.8rem', md: '2.2rem' },
-            animation: `${fadeInLeft} 0.8s ease forwards`,
-            animationDelay: '0.2s',
+            fontWeight: 700,
+            textAlign: 'center',
+            transform: 'rotate(-2deg)',
+            display: 'inline-block',
+            bgcolor: 'rgba(255,111,97,0.1)',
+            px: 2,
+            py: 1,
+            borderRadius: 2,
+            animation: `${fadeInLeft} 1s ease forwards`,
             opacity: 0,
-            ml: { xs: 0, md: 0 },
+            mb: 4,
           }}
         >
-          Willkommen auf meiner persönlichen Seite!
+          Willkommen auf meiner persönlichen Seite
         </Typography>
 
-        <Typography
-          variant="body1"
-          sx={{
-            mb: 2,
-            lineHeight: 1.7,
-            fontSize: { xs: '1.3rem', md: '1.5rem' },
-            animation: `${fadeInLeft} 0.8s ease forwards`,
-            animationDelay: '0.4s',
-            opacity: 0,
-            ml: { xs: 0, md: 2 },
-          }}
-        >
-          Ich bin neugierig von Natur und voller Motivation, Neues zu lernen. In
-          den letzten Jahren habe ich meine Kenntnisse in verschiedenen
-          Bereichen erweitert und mich in Deutschland integriert.
-        </Typography>
-
-        <Typography
-          variant="body1"
-          sx={{
-            mb: 2,
-            lineHeight: 1.7,
-            fontSize: { xs: '1.3rem', md: '1.5rem' },
-            animation: `${fadeInLeft} 0.8s ease forwards`,
-            animationDelay: '0.6s',
-            opacity: 0,
-            ml: { xs: 0, md: 4 },
-          }}
-        >
-          Meine Interessen reichen von Technik und IT bis hin zu Kunst und
-          Musik. Ich liebe es, mit Menschen zu kommunizieren, Projekte
-          umzusetzen und kreative Ideen in die Realität zu bringen.
-        </Typography>
-
-        <Typography
-          variant="body1"
-          sx={{
-            lineHeight: 1.7,
-            fontSize: { xs: '1.3rem', md: '1.5rem' },
-            animation: `${fadeInLeft} 0.8s ease forwards`,
-            animationDelay: '0.8s',
-            opacity: 0,
-            ml: { xs: 0, md: 6 },
-          }}
-        >
-          Ich freue mich darauf, mich Ihnen hier vorzustellen und ein wenig über
-          meinen Werdegang, meine Familie und meine Inspirationen zu erzählen.
-        </Typography>
+        {/* Абзацы с увеличенным смещением и центрированием */}
+        {paragraphs.map((text, i) => (
+          <Box
+            key={i}
+            sx={{
+              pl: { xs: 0, md: `${indent[i]}px` },
+              mb: 3,
+              textAlign: 'center', // центрирование текста внутри блока
+              animation: `${fadeInLeft} 0.8s ease forwards`,
+              animationDelay: `${0.4 + i * 0.2}s`,
+              opacity: 0,
+            }}
+          >
+            <Typography
+              variant="body1"
+              sx={{
+                lineHeight: 1.7,
+                fontSize: { xs: '1.3rem', md: '1.5rem' },
+              }}
+            >
+              {text}
+            </Typography>
+          </Box>
+        ))}
       </Box>
 
       {/* Фото + рамочки */}
