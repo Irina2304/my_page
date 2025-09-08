@@ -6,6 +6,13 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { keyframes } from '@mui/system';
+
+// Анимация появления карточек
+const fadeInUp = keyframes`
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+`;
 
 export default function Contact() {
   const contacts = [
@@ -55,8 +62,8 @@ export default function Contact() {
 
   return (
     <Box component="section" sx={{ py: 10, px: 2 }}>
+      {/* Заголовок с акцентной полоской */}
       <Box sx={{ maxWidth: 1100, mx: 'auto', textAlign: 'center', mb: 8 }}>
-        {/* Заголовок с акцентной полоской */}
         <Box
           sx={{ display: 'inline-flex', alignItems: 'center', gap: 2, mb: 2 }}
         >
@@ -67,7 +74,6 @@ export default function Contact() {
             Kontakte
           </Typography>
         </Box>
-
         <Typography
           variant="body1"
           color="text.secondary"
@@ -80,6 +86,7 @@ export default function Contact() {
         </Typography>
       </Box>
 
+      {/* Контакты */}
       <Box
         sx={{
           display: 'flex',
@@ -91,7 +98,14 @@ export default function Contact() {
         {contacts.map((column, i) => (
           <Box
             key={i}
-            sx={{ display: 'flex', flexDirection: 'column', gap: 3, flex: 1 }}
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: 3,
+              flex: 1,
+              animation: `${fadeInUp} 0.8s ease forwards`,
+              opacity: 0,
+            }}
           >
             {column.map((contact, index) => {
               const isExternal = contact.href.startsWith('http');
@@ -99,35 +113,29 @@ export default function Contact() {
               const rel = isExternal ? 'noopener noreferrer' : undefined;
 
               return (
-                <a
+                <Box
                   key={index}
+                  component="a"
                   href={contact.href}
                   target={target}
                   rel={rel}
-                  style={{
+                  sx={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '16px',
-                    padding: '16px',
-                    borderRadius: '12px',
+                    gap: 2,
+                    p: 2,
+                    borderRadius: 2,
                     textDecoration: 'none',
                     backgroundColor: '#f5f5f5',
                     color: '#1a1a1a',
                     transition: 'all 0.3s ease',
                     cursor: 'pointer',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.backgroundColor = '#e0e0e0';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow =
-                      '0 4px 8px rgba(0,0,0,0.15)';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.backgroundColor = '#f5f5f5';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.boxShadow =
-                      '0 1px 3px rgba(0,0,0,0.1)';
+                    '&:hover': {
+                      backgroundColor: '#e0e0e0',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
+                    },
                   }}
                 >
                   {contact.icon}
@@ -135,7 +143,7 @@ export default function Contact() {
                     <Typography fontWeight={600}>{contact.label}</Typography>
                     <Typography variant="body2">{contact.value}</Typography>
                   </Box>
-                </a>
+                </Box>
               );
             })}
           </Box>
