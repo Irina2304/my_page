@@ -21,8 +21,9 @@ function EducationCard({ title, subtitle, year, file, color }) {
     <Card
       sx={{
         display: 'flex',
+        backgroundColor: '#f5f5f5',
         flexDirection: 'column',
-        width: { xs: '100%', sm: 320, md: 360 },
+        width: { xs: 250, sm: 320, md: 360 },
         height: '100%',
         borderRadius: 3,
         boxShadow: '0 6px 16px rgba(0,0,0,0.15)',
