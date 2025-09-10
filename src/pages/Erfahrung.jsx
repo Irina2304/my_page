@@ -92,12 +92,38 @@ export default function ErfahrungSection() {
   return (
     <Box component="section" sx={{ py: 10, px: { xs: 2, md: 6 } }}>
       {/* Заголовок */}
-      <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, mb: 6 }}>
+      <Box
+        sx={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 2,
+          mb: 6,
+        }}
+      >
         <Box
-          sx={{ width: 6, height: 40, bgcolor: '#ff6f61', borderRadius: 2 }}
+          sx={{
+            width: 6,
+            height: 40,
+            bgcolor: '#ff6f61',
+            borderRadius: 2,
+          }}
         />
         <Typography variant="h3" fontWeight={700} textAlign="center">
           Erfahrung
+        </Typography>
+      </Box>
+      {/* Вступительный текст */}
+      <Box sx={{ maxWidth: 800, mx: 'auto', mb: 6, textAlign: 'center' }}>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{ fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7 }}
+        >
+          Ich sammle gerne praktische Erfahrungen und setze mein Wissen direkt
+          in Projekten um. Dabei lerne ich stetig dazu und verbessere meine
+          Fähigkeiten. Herausforderungen motivieren mich, kreative Lösungen zu
+          finden.
         </Typography>
       </Box>
 

@@ -183,6 +183,90 @@ function SkillRow({ icon, label, desc, delay = 0 }) {
   );
 }
 
+// export default function Fähigkeiten() {
+//   return (
+//     <Box component="section" sx={{ py: 10, px: { xs: 2, md: 6 } }}>
+//       {/* Заголовок */}
+//       <Box
+//         sx={{
+//           display: 'flex',
+//           alignItems: 'center',
+//           justifyContent: 'center',
+//           gap: 2,
+//           mb: 6,
+//         }}
+//       >
+//         <Box
+//           sx={{ width: 6, height: 40, bgcolor: '#ff6f61', borderRadius: 2 }}
+//         />
+//         <Typography variant="h3" fontWeight={700} textAlign="center">
+//           Fähigkeiten
+//         </Typography>
+//       </Box>
+
+//       <Grid
+//         container
+//         spacing={4}
+//         justifyContent="space-around"
+//         alignItems="flex-start"
+//       >
+//         {/* Fachkenntnisse */}
+//         <Grid item xs={12} md={4}>
+//           <Typography
+//             variant="h5"
+//             fontWeight={600}
+//             sx={{ mb: 2, textAlign: { xs: 'left', md: 'center' } }}
+//           >
+//             Fachkenntnisse
+//           </Typography>
+//           {fach.map((s, i) => (
+//             <SkillRow
+//               key={s.label}
+//               {...{ icon: s.icon, label: s.label, desc: s.desc }}
+//               delay={0.1 * i}
+//             />
+//           ))}
+//         </Grid>
+
+//         {/* Soft Skills */}
+//         <Grid item xs={12} md={4}>
+//           <Typography
+//             variant="h5"
+//             fontWeight={600}
+//             sx={{ mb: 2, textAlign: { xs: 'left', md: 'center' } }}
+//           >
+//             Soft Skills
+//           </Typography>
+//           {soft.map((s, i) => (
+//             <SkillRow
+//               key={s.label}
+//               {...{ icon: s.icon, label: s.label, desc: s.desc }}
+//               delay={0.1 * i}
+//             />
+//           ))}
+//         </Grid>
+
+//         {/* Sprachkenntnisse */}
+//         <Grid item xs={12} md={4}>
+//           <Typography
+//             variant="h5"
+//             fontWeight={600}
+//             sx={{ mb: 2, textAlign: { xs: 'left', md: 'center' } }}
+//           >
+//             Sprachkenntnisse
+//           </Typography>
+//           {languages.map((s, i) => (
+//             <SkillRow
+//               key={s.label}
+//               {...{ icon: s.icon, label: s.label, desc: s.desc }}
+//               delay={0.1 * i}
+//             />
+//           ))}
+//         </Grid>
+//       </Grid>
+//     </Box>
+//   );
+// }
 export default function Fähigkeiten() {
   return (
     <Box component="section" sx={{ py: 10, px: { xs: 2, md: 6 } }}>
@@ -193,7 +277,7 @@ export default function Fähigkeiten() {
           alignItems: 'center',
           justifyContent: 'center',
           gap: 2,
-          mb: 6,
+          mb: 4,
         }}
       >
         <Box
@@ -201,6 +285,20 @@ export default function Fähigkeiten() {
         />
         <Typography variant="h3" fontWeight={700} textAlign="center">
           Fähigkeiten
+        </Typography>
+      </Box>
+
+      {/* Вступительный текст */}
+      <Box sx={{ maxWidth: 800, mx: 'auto', mb: 6, textAlign: 'center' }}>
+        <Typography
+          variant="body1"
+          color="text.secondary"
+          sx={{ fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7 }}
+        >
+          Ich liebe es, meine Fähigkeiten weiterzuentwickeln und Neues
+          auszuprobieren. Sowohl fachliche als auch persönliche Kompetenzen
+          erweitern meinen Horizont und helfen mir, Herausforderungen zu
+          meistern.
         </Typography>
       </Box>
 

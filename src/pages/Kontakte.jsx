@@ -75,7 +75,7 @@ export default function Contact() {
           </Typography>
         </Box>
         <Typography
-          variant="body1"
+          sx={{ fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7 }}
           color="text.secondary"
           maxWidth={600}
           mx="auto"

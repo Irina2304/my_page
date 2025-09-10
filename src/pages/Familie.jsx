@@ -58,7 +58,7 @@ export default function Familie() {
             </Typography>
           </Box>
           <Typography
-            variant="body1"
+            sx={{ fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7 }}
             color="text.secondary"
             maxWidth={600}
             mx="auto"
@@ -75,7 +75,7 @@ export default function Familie() {
             gap: 6,
           }}
         >
-          {/* Фото коллаж */}
+          {/* Фото коллаж с общими рамками */}
           <Box
             flex={1}
             sx={{
@@ -86,6 +86,36 @@ export default function Familie() {
               position: 'relative',
             }}
           >
+            {/* Общие наклонные рамки */}
+            <Box
+              sx={{
+                position: 'absolute',
+                top: -20,
+                left: -20,
+                right: -20,
+                bottom: -20,
+                border: '3px solid rgba(255,111,97,0.5)',
+                borderRadius: 3,
+                transform: 'rotate(-4deg)',
+                zIndex: 1,
+                pointerEvents: 'none',
+              }}
+            />
+            <Box
+              sx={{
+                position: 'absolute',
+                top: -35,
+                left: -35,
+                right: -35,
+                bottom: -35,
+                border: '3px solid rgba(50,50,50,0.3)',
+                borderRadius: 3,
+                transform: 'rotate(6deg)',
+                zIndex: 0,
+                pointerEvents: 'none',
+              }}
+            />
+
             {/* Верхний ряд: две карточки */}
             <Box
               sx={{
@@ -94,6 +124,7 @@ export default function Familie() {
                 justifyContent: 'center',
                 flexWrap: { xs: 'wrap', md: 'nowrap' },
                 position: 'relative',
+                zIndex: 2, // чтобы карточки были поверх рамок
               }}
             >
               <Card
@@ -151,6 +182,7 @@ export default function Familie() {
                 transform: 'rotate(-1.5deg)',
                 mt: 2,
                 transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+                zIndex: 2,
                 '&:hover': {
                   transform: 'rotate(-1.5deg) scale(1.05)',
                   boxShadow: 6,
@@ -169,7 +201,11 @@ export default function Familie() {
             <Typography variant="h5" fontWeight={600}>
               Familie – das Herzstück meines Lebens
             </Typography>
-            <Typography variant="body1" color="text.secondary" lineHeight={1.7}>
+            <Typography
+              sx={{ fontSize: { xs: '1rem', md: '1.2rem' }, lineHeight: 1.7 }}
+              color="text.secondary"
+              lineHeight={1.7}
+            >
               Meine Familie gibt mir Halt, Kraft und Motivation. Dank ihr habe
               ich gelernt, Balance zwischen Arbeit und Privatleben zu schätzen,
               Ziele beharrlich zu verfolgen und in schwierigen Momenten niemals
