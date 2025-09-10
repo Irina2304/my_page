@@ -97,7 +97,7 @@ export default function ErfahrungSection() {
           sx={{ width: 6, height: 40, bgcolor: '#ff6f61', borderRadius: 2 }}
         />
         <Typography variant="h3" fontWeight={700} textAlign="center">
-          Berufserfahrung
+          Erfahrung
         </Typography>
       </Box>
 

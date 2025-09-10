@@ -1,8 +1,38 @@
-import React from 'react';
-import { Box, Typography, Card, CardMedia, Avatar } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Typography, Card, Avatar } from '@mui/material';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import HomeIcon from '@mui/icons-material/Home';
 import GroupIcon from '@mui/icons-material/Group';
+
+function BlurryImage({ src, alt }) {
+  const [loaded, setLoaded] = useState(false);
+
+  return (
+    <Box
+      sx={{
+        width: '100%',
+        height: '100%',
+        bgcolor: '#c5c5c5', // фон пока фото не загрузилось
+        overflow: 'hidden',
+      }}
+    >
+      <Box
+        component="img"
+        src={src}
+        alt={alt}
+        onLoad={() => setLoaded(true)}
+        sx={{
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          transition: 'filter 0.6s ease, opacity 0.6s ease',
+          filter: loaded ? 'blur(0px)' : 'blur(20px)',
+          opacity: loaded ? 1 : 0.7,
+        }}
+      />
+    </Box>
+  );
+}
 
 export default function Familie() {
   return (
@@ -82,12 +112,9 @@ export default function Familie() {
                   },
                 }}
               >
-                <CardMedia
-                  component="img"
-                  loading="lazy"
+                <BlurryImage
                   src={`${process.env.PUBLIC_URL}/foto/familie_1.webp`}
                   alt="Familie Bild 1"
-                  sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </Card>
 
@@ -106,15 +133,13 @@ export default function Familie() {
                   },
                 }}
               >
-                <CardMedia
-                  component="img"
-                  loading="lazy"
+                <BlurryImage
                   src={`${process.env.PUBLIC_URL}/foto/familie_2.webp`}
                   alt="Familie Bild 2"
-                  sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </Card>
             </Box>
+
             {/* Нижняя карточка */}
             <Card
               sx={{
@@ -132,12 +157,9 @@ export default function Familie() {
                 },
               }}
             >
-              <CardMedia
-                component="img"
-                loading="lazy"
+              <BlurryImage
                 src={`${process.env.PUBLIC_URL}/foto/familie_3.webp`}
                 alt="Familie Bild 3"
-                sx={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </Card>
           </Box>
