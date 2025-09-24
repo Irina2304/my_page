@@ -17,7 +17,7 @@ export default function Home() {
   const paragraphs = [
     'Ich bin neugierig von Natur und voller Motivation, Neues zu lernen. In den letzten Jahren habe ich meine Kenntnisse in verschiedenen Bereichen erweitert und mich in Deutschland integriert.',
     'Meine Interessen reichen von Technik und IT bis hin zu Kunst und Musik. Ich liebe es, mit Menschen zu kommunizieren, Projekte umzusetzen und kreative Ideen in die Realität zu bringen.',
-    'Ich freue mich darauf, mich Ihnen hier vorzustellen und ein wenig über meinen Werdegang, meine Familie und meine Inspirationen zu erzählen.',
+    'Ich freue mich darauf, mich Ihnen hier vorzustellen und ein wenig über meinen Werdegang und meine Inspirationen zu erzählen.',
   ];
 
   const indent = [0, 60, 120];
