@@ -12,7 +12,7 @@ import Home from '../pages/Home';
 import Bildung from '../pages/Bildung';
 import Erfahrung from '../pages/Erfahrung';
 import Fähigkeiten from '../pages/Fähigkeiten';
-import Familie from '../pages/Familie';
+// import Familie from '../pages/Familie';
 import Kontakte from '../pages/Kontakte';
 
 // Стили для декоративных кружков
