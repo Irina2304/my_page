@@ -26,7 +26,7 @@ export function Header() {
     { path: '/fähigkeiten', label: 'Fähigkeiten' },
     { path: '/erfahrung', label: 'Erfahrung' },
     { path: '/bildung', label: 'Bildung' },
-    { path: '/familie', label: 'Familie' },
+    // { path: '/familie', label: 'Familie' },
     { path: '/kontakte', label: 'Kontakte' },
   ];
 

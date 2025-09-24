@@ -2,7 +2,9 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';
-import FacebookIcon from '@mui/icons-material/Facebook';
+// import FacebookIcon from '@mui/icons-material/Facebook';
+import SvgIcon from '@mui/material/SvgIcon';
+import { siViber } from 'simple-icons/icons';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
@@ -13,6 +15,14 @@ const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 `;
+
+function ViberIcon(props) {
+  return (
+    <SvgIcon {...props} viewBox="0 0 24 24">
+      <path d={siViber.path} fill="#7360F2" />
+    </SvgIcon>
+  );
+}
 
 export default function Contact() {
   const contacts = [
@@ -37,25 +47,31 @@ export default function Contact() {
         value: 'linkedin.com/in/iryna-k/',
         href: 'https://www.linkedin.com/in/iryna-k/',
       },
-      {
-        icon: <FacebookIcon sx={{ color: '#1877F2', fontSize: 40 }} />,
-        label: 'Facebook',
-        value: 'facebook.com/irisha.kulik',
-        href: 'https://www.facebook.com/irisha.kulik/',
-      },
-    ],
-    [
+      // {
+      //   icon: <FacebookIcon sx={{ color: '#1877F2', fontSize: 40 }} />,
+      //   label: 'Facebook',
+      //   value: 'facebook.com/irisha.kulik',
+      //   href: 'https://www.facebook.com/irisha.kulik/',
+      // },
       {
         icon: <TelegramIcon sx={{ color: '#0088CC', fontSize: 40 }} />,
         label: 'Telegram',
         value: '@irisha_kulyk',
         href: 'tg://resolve?domain=irisha_kulyk',
       },
+    ],
+    [
       {
         icon: <WhatsAppIcon sx={{ color: '#25D366', fontSize: 40 }} />,
         label: 'WhatsApp',
         value: '+49 175 627 44 88',
         href: 'https://wa.me/491756274488',
+      },
+      {
+        icon: <ViberIcon sx={{ fontSize: 40 }} />,
+        label: 'Viber',
+        value: '+380631304494',
+        href: 'viber://chat?number=%2B380631304494',
       },
     ],
   ];

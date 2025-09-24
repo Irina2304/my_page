@@ -105,7 +105,7 @@ function App() {
             <Route path="/bildung" element={<Bildung />} />
             <Route path="/erfahrung" element={<Erfahrung />} />
             <Route path="/fähigkeiten" element={<Fähigkeiten />} />
-            <Route path="/familie" element={<Familie />} />
+            {/* <Route path="/familie" element={<Familie />} /> */}
             <Route path="/kontakte" element={<Kontakte />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
